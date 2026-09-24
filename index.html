@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PSYC 452 Environmental Psychology Test</title>
+<style>
+:root{--bg:#f6f4ee;--card:#fff;--ink:#1f2a24;--mut:#66726b;--line:#dcd8cc;--acc:#2f6b4f;--accbg:#e4f0e9;--ok:#1d7a46;--okbg:#e1f4e8;--bad:#b3261e;--badbg:#fbe6e4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121815;--card:#1b2320;--ink:#e8ede9;--mut:#9aa8a0;--line:#2f3b35;--acc:#6fc79a;--accbg:#22382d;--ok:#6fd49a;--okbg:#1c3527;--bad:#f2857d;--badbg:#3c2422}}
+:root[data-theme="dark"]{--bg:#121815;--card:#1b2320;--ink:#e8ede9;--mut:#9aa8a0;--line:#2f3b35;--acc:#6fc79a;--accbg:#22382d;--ok:#6fd49a;--okbg:#1c3527;--bad:#f2857d;--badbg:#3c2422}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Georgia,'Times New Roman',serif}
+main{max-width:720px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.6rem;margin:8px 0 4px}h2{font-size:1.1rem;margin:28px 0 10px;color:var(--acc);text-transform:uppercase;letter-spacing:.06em;font-family:system-ui,sans-serif}
+.sub{color:var(--mut);margin:0 0 16px;font-family:system-ui,sans-serif;font-size:.92rem}
+.part{font-family:system-ui,sans-serif;font-size:1.05rem;margin:36px 0 0;padding-bottom:6px;border-bottom:2px solid var(--acc)}
+.q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0}
+.q p{margin:0 0 10px;font-weight:600}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;margin:6px 0;border:1px solid var(--line);border-radius:8px;cursor:pointer;font-family:system-ui,sans-serif;font-size:.95rem}
+.opt input{margin-top:3px;accent-color:var(--acc)}
+.opt:has(input:checked){background:var(--accbg);border-color:var(--acc)}
+input.fi,input.nm{width:100%;padding:11px 12px;font:1rem system-ui,sans-serif;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+input:focus{outline:2px solid var(--acc);outline-offset:1px}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}.opt.bad{background:var(--badbg);border-color:var(--bad)}
+.fb{margin-top:8px;font:.9rem system-ui,sans-serif;padding:8px 10px;border-radius:8px}
+.fb.ok{background:var(--okbg);color:var(--ok)}.fb.bad{background:var(--badbg);color:var(--bad)}
+button{width:100%;padding:14px;margin-top:22px;font:600 1rem system-ui,sans-serif;background:var(--acc);color:var(--bg);border:0;border-radius:10px;cursor:pointer}
+button:disabled{opacity:.5}
+#msg{font:.92rem system-ui,sans-serif;color:var(--bad);margin-top:10px;text-align:center;min-height:1.2em}
+#res{display:none;background:var(--card);border:2px solid var(--acc);border-radius:14px;padding:18px;margin:16px 0;text-align:center;font-family:system-ui,sans-serif}
+#res .big{font-size:2.4rem;font-weight:700;color:var(--acc)}
+</style></head>
+<body><main>
+<h1>PSYC 452: Environmental Psychology</h1>
+<p class="sub">Part A: choose one answer. Part B: type the exact term. Your score and all the answers are revealed the moment you submit.</p>
+<label class="sub" for="nm">Your name</label>
+<input class="nm" id="nm" placeholder="Type your name" autocomplete="name">
+<div id="res"></div>
+<div id="app"></div>
+<button id="sub">Submit all answers</button>
+<div id="msg"></div>
+</main>
+<script>
+const MC=[
+["Introduction",[
+["Environmental psychology is best defined as:",["The study of plants and ecosystems","The study of the interaction between human behaviour and the physical surroundings","The study of climate change policy","The study of animal behaviour in the wild"],1],
+["Environmental psychology became an academic field of study and research in:",["The 1930s","The 1950s","The late 1960s and early 1970s","The 1990s"],2],
+["Which is a traditional Ghanaian method of environmental conservation?",["Environmental impact assessment","Declaring certain forests as belonging to the gods","Carbon trading","Zoning by-laws"],1],
+["Environmental psychology mainly focuses on which environments?",["Only the natural environment","The built, social and psychological environment","Only the underwater environment","Only the industrial environment"],1]]],
+["Personal Space and Territories",[
+["The personal space kept by spouses, romantic partners and parents with babies, allowing close hugging and kissing, is:",["Public","Social","Intimate","Secondary"],2],
+["A space shared by two or more persons, where no one has exclusive rights except by prior arrangement, is a:",["Primary territory","Secondary territory","Public territory","Intimate territory"],1],
+["Which is an example of a territorial marker in a school library?",["Asking the librarian for a book","Switching off the lights","Placing a bag or jacket on a chair","Reading quietly"],2],
+["Social/public personal space is usually kept during:",["Hugging a family member","Social gatherings and business settings with people of varied background","Sleeping in one's own room","Holding hands with a close friend"],1]]],
+["Crowding",[
+["Objective crowding refers to:",["A feeling of discomfort about too many people","Space in relation to the number of persons or objects (e.g. persons per room)","Loss of control over one's surroundings","Stress caused by noise"],1],
+["Milgram's (1970) theory explains crowding as too much information to be processed. It is called:",["Density-intensity theory","Loss of control theory","Attribution theory","Sensory overload theory"],3],
+["Which is NOT listed as a cause of crowding?",["Rural-urban migration","High cost of rent","Strict enforcement of settlement laws","Concentration of socio-economic activities in one area"],2],
+["Klein and Harris (1979) found that crowding affects:",["Eyesight","Performance of complex tasks","Height","Taste of food"],1]]],
+["Noise",[
+["The instrument used to measure noise is a:",["Barometer","Dosimeter (noise level meter)","Hygrometer","Anemometer"],1],
+["According to the EPA (2009), the most common noise in Ghanaian residential areas comes from:",["Road transport","Industrial machinery","Religious activities","Air traffic"],2],
+["The permissible night-time noise level for residential areas is:",["40 dB","48 dB","55 dB","60 dB"],1],
+["In general, any sound above what level during the day is considered noise?",["30 dB","45 dB","60 dB","90 dB"],2]]],
+["Cigarette Smoking",[
+["According to Middleton (1995), tobacco was introduced into Europe by:",["Vasco da Gama","Christopher Columbus","Mungo Park","Prince Henry"],1],
+["Smoking is reported to cause more than how many deaths each year (US DHHS, 2014)?",["48,000","480,000","4.8 million","4,800"],1],
+["Which is NOT listed as a way to control smoking?",["Increasing taxes on tobacco products","Banning cigarette advertisements","Rehabilitation centres for those who want to quit","Banning the sale of alcohol"],3],
+["Among pregnant women, smoking can lead to:",["Higher than average birth weight","Congenital diseases and lower than average birth weight","Improved appetite","Faster delivery"],1]]],
+["Slums",[
+["The 2013 UN report says about one billion people live in slums, roughly what share of the world's urban dwellers?",["One tenth","One quarter","One third","One half"],2],
+["A 'slum of hope' is one where:",["Facilities remain the same or deteriorate","Facilities are added or upgraded over time","Residents have secure land tenure","The state has banned settlement"],1],
+["Which is listed as a factor leading to slums?",["Lack of political will or fear of losing elections","Abundant affordable housing","Strict enforcement of settlement laws","Declining rural-urban migration"],0],
+["In the UN slum population figures (1990-2020), which region has the highest number?",["Sub-Sahara Africa","Eastern Asia","South Central Asia","North Africa"],2]]],
+["Classroom Dynamics",[
+["In the theatre seating type, those in front sit lower than those behind. The main benefit is:",["The facilitator can move around freely","Those in front are less likely to block the view of those behind","It suits group tasks","It is the cheapest arrangement"],1],
+["Which arrangement is very effective for class discussion and helps reduce absenteeism?",["Uniform","Theatre","Horse-shoe (semicircle)","Traditional"],2],
+["A shortcoming of the modular arrangement is:",["It is unsuitable for group work","Potential for social loafing","It discourages healthy competition","It cannot be used in task-oriented courses"],1]]],
+["Mining and Environmental Management",[
+["Ghana is recorded as having started mining gold around:",["1093","1493","1793","1893"],1],
+["Illegal mining in Ghana is popularly known as:",["Sakawa","Kalabule","Galamsey","Trotro"],2],
+["Which is NOT listed as something that can be done about the adverse effects of mining?",["Mandatory land reclamation policy","Prohibiting mining near water bodies and forest reserves","Reducing royalties","Environmental impact assessment"],2],
+["Egypt is credited with first mining gold on which site around 3000BC?",["Nile Delta","Sinai peninsula","Giza plateau","Aswan dam"],1]]]
+];
+const FB=[
+["Introduction",[
+["The first published study in environmental psychology was by ______ and Wright in the 1950s.",["baker"]],
+["A traditional Ghanaian conservation practice was declaring certain forests as belonging to the ______.",["gods"]]]],
+["Personal Space and Territories",[
+["The closest personal space, kept by spouses and by parents with babies, is ______ space.",["intimate"]],
+["Any act meant to show that a space belongs to someone is called a territorial ______.",["marker","markers","behaviour","behavior","marker behaviour"]],
+["A space open to all on a first come, first use basis is a ______ territory.",["public"]]]],
+["Crowding",[
+["Crowding measured as persons per room or structures per space is ______ crowding.",["objective"]],
+["Milgram's (1970) theory of too much information to process is called ______ ______ theory.",["sensory overload"]],
+["Baron and Rodin's (1978) theory, where one has little or no control, is the ______ of ______ theory.",["loss of control"]]]],
+["Noise",[
+["Noise is measured in the unit ______.",["decibels","decibel","db"]],
+["The instrument used to measure noise is called a ______.",["dosimeter","noise level meter","noise meter"]],
+["The most prevalent type of noise is ______ transport noise.",["road"]]]],
+["Cigarette Smoking",[
+["Because cigarettes contain many chemical combinations, they are called a '______ of chemicals'.",["cocktail"]],
+["Tobacco was introduced into Europe by ______ ______.",["christopher columbus","columbus"]]]],
+["Slums",[
+["A slum where facilities are added or upgraded over time is a slum of ______.",["hope"]],
+["A slum where facilities remain the same or deteriorate is a slum of ______.",["despair"]]]],
+["Classroom Dynamics",[
+["The traditional seating arrangement has two types: Uniform and ______.",["theatre","theater"]],
+["The ______ seating arrangement is used for task-oriented courses where learners work in small groups.",["modular"]]]],
+["Mining and Environmental Management",[
+["Illegal mining in Ghana is popularly called ______.",["galamsey"]],
+["Minerals such as gold and oil cannot be grown or created artificially, so they are ______ resources.",["non-renewable","nonrenewable","non renewable"]]]]
+];
+const L="ABCD",norm=s=>s.toLowerCase().replace(/-/g,"").replace(/[^a-z0-9 ]/g,"").replace(/\s+/g," ").trim().replace(/^the /,"").replace(/ theory$/,"");
+let n=0,h='<div class="part">Part A: Multiple choice</div>',mcs=[],fbs=[];
+MC.forEach(([t,qs])=>{h+='<h2>'+t+'</h2>';qs.forEach(([q,o,a])=>{const i=mcs.length;mcs.push({a,o});n++;
+h+='<div class="q" id="m'+i+'"><p>'+n+'. '+q+'</p>'+o.map((x,j)=>'<label class="opt"><input type="radio" name="m'+i+'" value="'+j+'"><span>'+L[j]+'. '+x+'</span></label>').join('')+'<div class="fb" hidden></div></div>'})});
+h+='<div class="part">Part B: Type the exact term</div>';
+FB.forEach(([t,qs])=>{h+='<h2>'+t+'</h2>';qs.forEach(([q,a])=>{const i=fbs.length;fbs.push(a);n++;
+h+='<div class="q" id="f'+i+'"><p>'+n+'. '+q+'</p><input class="fi" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Type your answer"><div class="fb" hidden></div></div>'})});
+document.getElementById('app').innerHTML=h;
+let done=false;
+document.getElementById('sub').onclick=function(){
+if(done)return;
+const msg=document.getElementById('msg');
+done=true;this.disabled=true;msg.textContent='';
+let sm=0,sf=0;
+mcs.forEach((q,i)=>{const box=document.getElementById('m'+i),c=box.querySelector('input:checked'),v=c?+c.value:-1;
+box.querySelectorAll('.opt').forEach((l,j)=>{l.querySelector('input').disabled=true;if(j===q.a)l.classList.add('ok');else if(j===v)l.classList.add('bad')});
+const f=box.querySelector('.fb');f.hidden=false;
+if(v===q.a){sm++;f.className='fb ok';f.textContent='Correct'}else{f.className='fb bad';f.textContent=(v<0?'No answer. ':'Incorrect. ')+'Correct answer: '+L[q.a]+'. '+q.o[q.a]}});
+fbs.forEach((a,i)=>{const box=document.getElementById('f'+i),inp=box.querySelector('input'),f=box.querySelector('.fb');inp.disabled=true;f.hidden=false;
+const ok=a.map(norm).includes(norm(inp.value));
+if(ok){sf++;f.className='fb ok';f.textContent='Correct'}else{f.className='fb bad';f.textContent=(inp.value.trim()?'Incorrect. ':'No answer. ')+'Correct answer: '+a[0]}});
+const tot=mcs.length+fbs.length,s=sm+sf,name=document.getElementById('nm').value.trim();
+const r=document.getElementById('res');r.style.display='block';
+r.innerHTML=(name?'<div>'+name.replace(/</g,'&lt;')+'</div>':'')+'<div class="big">'+s+' / '+tot+'</div><div>'+Math.round(s/tot*100)+'%</div><div style="margin-top:8px;color:var(--mut)">Part A: '+sm+' / '+mcs.length+' &nbsp;|&nbsp; Part B: '+sf+' / '+fbs.length+'<br>Scroll down to review every answer.</div>';
+window.scrollTo({top:0,behavior:'smooth'})};
+</script></body></html>
